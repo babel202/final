@@ -121,7 +121,8 @@ with st.echo(code_location="below"):
     @st.cache
     def plot_moscow(gdf_gibdd):
         gdf_gibdd = gdf_gibdd
-
+        r = requests.get("https://www.dropbox.com/s/zktq4vif5c6jzh1/admin_level_8.geojson?dl=1", allow_redirects=True)
+        open('admin_level_8.geojson', 'wb').write(r.content)
         ### FROM: Homework 14 (Анна Денисова)
         with open("admin_level_8.geojson", encoding="utf-8") as f:
             a = json.load(f)
